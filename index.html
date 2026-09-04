@@ -64,9 +64,10 @@
     border-radius: 2px;
   }
   @media (prefers-reduced-motion: no-preference) {
-    .masthead, main > section { animation: rise 0.5s ease-out backwards; }
+    .masthead, .total--lead, main > section { animation: rise 0.5s ease-out backwards; }
     .masthead { animation-delay: 0s; }
-    main > section:nth-of-type(1) { animation-delay: 0.05s; }
+    .total--lead { animation-delay: 0.05s; }
+    main > section:nth-of-type(1) { animation-delay: 0.1s; }
     main > section:nth-of-type(2) { animation-delay: 0.1s; }
     main > section:nth-of-type(3) { animation-delay: 0.15s; }
     main > section:nth-of-type(4) { animation-delay: 0.2s; }
@@ -277,12 +278,14 @@
   .total {
     border-top: 2px solid var(--accent);
     border-bottom: 2px solid var(--accent);
-    padding: 28px 0;
+    padding: 26px 0;
+    margin-bottom: 40px;
     display: flex;
     align-items: baseline;
     gap: 22px;
     flex-wrap: wrap;
   }
+  .total--lead { position: relative; }
   .total__num {
     font-family: "Fraunces", Georgia, serif;
     font-style: italic;
@@ -319,6 +322,14 @@
       <span class="datestamp mono">Prepared September 2026</span>
     </div>
   </header>
+
+  <section class="total total--lead">
+    <div class="total__num mono">32+</div>
+    <div class="total__body">
+      <span class="kicker">Total Contribution</span>
+      <p>Pieces of evidence over the trailing 12 months — 9 speaking sessions, 8 published articles, 3 IEEE Region 3 videos, and 12+ LinkedIn posts.</p>
+    </div>
+  </section>
 
   <p class="lead">A record of speaking, publishing, and community contribution in applied AI — building
   retrieval-augmented generation pipelines and agentic systems on Azure OpenAI, Azure Cosmos DB, and Chroma DB,
@@ -430,14 +441,6 @@
         <span class="count mono">12+</span>
       </div>
       <p class="section__note">Posts on AI, RAG, and vector databases — <span class="impressions">11,600+ impressions</span></p>
-    </section>
-
-    <section class="total">
-      <div class="total__num mono">32+</div>
-      <div class="total__body">
-        <span class="kicker">Total Contribution</span>
-        <p>Pieces of evidence over the trailing 12 months — 9 speaking sessions, 8 published articles, 3 IEEE Region 3 videos, and 12+ LinkedIn posts.</p>
-      </div>
     </section>
 
   </main>
