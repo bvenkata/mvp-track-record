@@ -238,15 +238,38 @@
     margin: 10px 0 4px;
   }
 
-  .record { list-style: none; margin: 12px 0 0; padding: 0; }
-  .record li {
-    padding: 14px 0;
-    border-top: 1px solid var(--line);
+  .record {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    counter-reset: item;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 10px;
   }
-  .record li:last-child { padding-bottom: 0; }
+  .record li {
+    counter-increment: item;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .record li::before {
+    content: counter(item, decimal-leading-zero);
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--accent);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+  }
+  .record .body { display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
   .record .title { font-weight: 500; }
   .record .title a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
   .record .title a:hover { border-bottom-color: var(--accent); }
@@ -353,38 +376,52 @@
       </div>
       <ul class="record">
         <li>
-          <span class="title">AgentCamp Memphis 2026</span>
+          <div class="body"><span class="title">AgentCamp Memphis 2026</span></div>
         </li>
         <li>
-          <span class="title">Scenic City Summit 2026</span>
-          <span class="venue">"Supercharging AI with Vector Databases"</span>
+          <div class="body">
+            <span class="title">Scenic City Summit 2026</span>
+            <span class="venue">"Supercharging AI with Vector Databases"</span>
+          </div>
         </li>
         <li>
-          <span class="title">Memphis Technology User Groups Meetup — Jeffrey Scarpace's group, July 23</span>
-          <span class="venue">"Supercharging AI Applications with Azure Cosmos DB and Azure OpenAI"</span>
+          <div class="body">
+            <span class="title">Memphis Technology User Groups Meetup — Jeffrey Scarpace's group, July 23</span>
+            <span class="venue">"Supercharging AI Applications with Azure Cosmos DB and Azure OpenAI"</span>
+          </div>
         </li>
         <li>
-          <span class="title">AgentCamp Online</span>
-          <span class="venue">RAG pipeline session</span>
+          <div class="body">
+            <span class="title">AgentCamp Online</span>
+            <span class="venue">RAG pipeline session</span>
+          </div>
         </li>
         <li>
-          <span class="title"><a href="https://www.meetup.com/memphis-technology-user-groups/events/315215097/" target="_blank" rel="noopener">Memphis Technology User Groups Meetup <span class="arrow">↗</span></a></span>
-          <span class="venue">"Building Your First RAG Pipeline in Python with Azure OpenAI, Azure Cosmos DB, and Chroma DB"</span>
+          <div class="body">
+            <span class="title"><a href="https://www.meetup.com/memphis-technology-user-groups/events/315215097/" target="_blank" rel="noopener">Memphis Technology User Groups Meetup <span class="arrow">↗</span></a></span>
+            <span class="venue">"Building Your First RAG Pipeline in Python with Azure OpenAI, Azure Cosmos DB, and Chroma DB"</span>
+          </div>
         </li>
         <li>
-          <span class="title">Microsoft Office, Memphis</span>
-          <span class="venue">"Developing AI Agent Pipelines in Python with Azure AI Foundry, OpenAI, and ChromaDB"</span>
+          <div class="body">
+            <span class="title">Microsoft Office, Memphis</span>
+            <span class="venue">"Developing AI Agent Pipelines in Python with Azure AI Foundry, OpenAI, and ChromaDB"</span>
+          </div>
         </li>
         <li>
-          <span class="title">Copilotverse</span>
+          <div class="body"><span class="title">Copilotverse</span></div>
         </li>
         <li>
-          <span class="title">Nashua CLOUD .NET User Group (online)</span>
-          <span class="venue">"Build Your First Python RAG Pipeline with Azure OpenAI, Cosmos DB &amp; Chroma"</span>
+          <div class="body">
+            <span class="title">Nashua CLOUD .NET User Group (online)</span>
+            <span class="venue">"Build Your First Python RAG Pipeline with Azure OpenAI, Cosmos DB &amp; Chroma"</span>
+          </div>
         </li>
         <li>
-          <span class="title">SIM Memphis IT Strategy Series</span>
-          <span class="venue">"The AI-Assisted Developer"</span>
+          <div class="body">
+            <span class="title">SIM Memphis IT Strategy Series</span>
+            <span class="venue">"The AI-Assisted Developer"</span>
+          </div>
         </li>
       </ul>
     </section>
@@ -399,13 +436,13 @@
       <div class="subgroup">
         <div class="subgroup__label">DZone · 7</div>
         <ul class="record">
-          <li><span class="title"><a href="https://dzone.com/articles/building-agentic-rag" target="_blank" rel="noopener">Building Agentic RAG <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/bedrock-vs-vertex-vs-foundry" target="_blank" rel="noopener">Bedrock vs Vertex vs Foundry <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/vector-database-indexing-explained" target="_blank" rel="noopener">Vector Database Indexing Explained <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/agentic-rag-mcp" target="_blank" rel="noopener">Agentic RAG + MCP <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/rag-agent-azure-ai-foundry" target="_blank" rel="noopener">RAG Agent on Azure AI Foundry <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/config-driven-soap-rest-integration" target="_blank" rel="noopener">Building a Config-Driven SOAP/REST Integration Layer: One Service, Many Protocols <span class="arrow">↗</span></a></span></li>
-          <li><span class="title"><a href="https://dzone.com/articles/ai-orchestration-types" target="_blank" rel="noopener">AI Orchestration Types <span class="arrow">↗</span></a></span></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/building-agentic-rag" target="_blank" rel="noopener">Building Agentic RAG <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/bedrock-vs-vertex-vs-foundry" target="_blank" rel="noopener">Bedrock vs Vertex vs Foundry <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/vector-database-indexing-explained" target="_blank" rel="noopener">Vector Database Indexing Explained <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/agentic-rag-mcp" target="_blank" rel="noopener">Agentic RAG + MCP <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/rag-agent-azure-ai-foundry" target="_blank" rel="noopener">RAG Agent on Azure AI Foundry <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/config-driven-soap-rest-integration" target="_blank" rel="noopener">Building a Config-Driven SOAP/REST Integration Layer: One Service, Many Protocols <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/ai-orchestration-types" target="_blank" rel="noopener">AI Orchestration Types <span class="arrow">↗</span></a></span></div></li>
         </ul>
       </div>
 
@@ -413,8 +450,10 @@
         <div class="subgroup__label">O'Reilly Radar · 1</div>
         <ul class="record">
           <li>
-            <span class="title">"MCP Is Not Just Another API Standard"</span>
-            <span class="venue">Scheduled September 23, 2026</span>
+            <div class="body">
+              <span class="title">"MCP Is Not Just Another API Standard"</span>
+              <span class="venue">Scheduled September 23, 2026</span>
+            </div>
           </li>
         </ul>
       </div>
@@ -428,9 +467,9 @@
       </div>
       <p class="section__note">Video series produced for IEEE Region 3, hosted on YouTube.</p>
       <ul class="record">
-        <li><span class="title"><a href="https://youtu.be/tlh20j1wbyg" target="_blank" rel="noopener">Video 1 <span class="arrow">↗</span></a></span></li>
-        <li><span class="title"><a href="https://youtu.be/bt4Ih73E4qc" target="_blank" rel="noopener">Video 2 <span class="arrow">↗</span></a></span></li>
-        <li><span class="title"><a href="https://youtu.be/RdXXn59zfqg" target="_blank" rel="noopener">Video 3 <span class="arrow">↗</span></a></span></li>
+        <li><div class="body"><span class="title"><a href="https://youtu.be/tlh20j1wbyg" target="_blank" rel="noopener">Video 1 <span class="arrow">↗</span></a></span></div></li>
+        <li><div class="body"><span class="title"><a href="https://youtu.be/bt4Ih73E4qc" target="_blank" rel="noopener">Video 2 <span class="arrow">↗</span></a></span></div></li>
+        <li><div class="body"><span class="title"><a href="https://youtu.be/RdXXn59zfqg" target="_blank" rel="noopener">Video 3 <span class="arrow">↗</span></a></span></div></li>
       </ul>
     </section>
 
