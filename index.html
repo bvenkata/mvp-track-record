@@ -68,11 +68,9 @@
     border-radius: 2px;
   }
   @media (prefers-reduced-motion: no-preference) {
-    .identity-card, .info-card, .total--lead, main > section { animation: rise 0.5s ease-out backwards; }
+    .identity-card, .total--lead, main > section { animation: rise 0.5s ease-out backwards; }
     .identity-card { animation-delay: 0s; }
-    .info-card:nth-of-type(1) { animation-delay: 0.05s; }
-    .info-card:nth-of-type(2) { animation-delay: 0.1s; }
-    .total--lead { animation-delay: 0.15s; }
+    .total--lead { animation-delay: 0.05s; }
     main > section:nth-of-type(1) { animation-delay: 0.1s; }
     main > section:nth-of-type(2) { animation-delay: 0.1s; }
     main > section:nth-of-type(3) { animation-delay: 0.15s; }
@@ -206,37 +204,6 @@
     color: var(--muted);
     font-size: 0.82rem;
   }
-
-  /* ---------- Info cards (About / DZone stats) ---------- */
-  .info-card {
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--surface);
-    padding: 22px 24px;
-    margin-bottom: 16px;
-  }
-  .info-card h3 {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 12px;
-  }
-  .info-card p {
-    margin: 0;
-    max-width: 64ch;
-  }
-  .stat-rows .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 11px 0;
-    border-top: 1px solid var(--line);
-  }
-  .stat-rows .row:first-child { border-top: none; padding-top: 2px; }
-  .stat-rows .row .k { color: var(--muted); font-size: 0.92rem; }
-  .stat-rows .row .v { font-weight: 500; }
 
   /* ---------- Stat ledger ---------- */
   .ledger {
@@ -419,24 +386,6 @@
       </div>
     </div>
   </header>
-
-  <div class="info-card">
-    <h3>About</h3>
-    <p>Technical Lead and AI engineer with 13+ years in insurance technology. Builds scalable systems using
-    React, .NET, Progress 4GL, and modern AI/LLM architectures — leading teams, delivering enterprise platforms,
-    and shipping solutions adopted across multiple carriers, including no-code onboarding frameworks and
-    high-performance REST services. Currently focused on AI-agent systems and MCP-based automation.</p>
-  </div>
-
-  <div class="info-card">
-    <h3>DZone Community Profile</h3>
-    <div class="stat-rows">
-      <div class="row"><span class="k">Reputation</span><span class="v mono">477</span></div>
-      <div class="row"><span class="k">Pageviews</span><span class="v mono">12.5K</span></div>
-      <div class="row"><span class="k">Articles</span><span class="v mono">7</span></div>
-      <div class="row"><span class="k">Comments</span><span class="v mono">0</span></div>
-    </div>
-  </div>
 
   <section class="total total--lead">
     <div class="total__num mono">32+</div>
