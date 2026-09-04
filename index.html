@@ -20,6 +20,8 @@
     --accent-soft: #E7EEF2;
     --mark: #A8763A;
     --mark-soft: #F3E9DA;
+    --banner-b: #2E7C82;
+    --linkedin: #0A66C2;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -32,6 +34,7 @@
       --accent-soft: #1B2B33;
       --mark: #D7A15E;
       --mark-soft: #2C2419;
+      --banner-b: #4FA3A6;
     }
   }
   :root[data-theme="dark"] {
@@ -44,6 +47,7 @@
     --accent-soft: #1B2B33;
     --mark: #D7A15E;
     --mark-soft: #2C2419;
+    --banner-b: #4FA3A6;
   }
 
   * { box-sizing: border-box; }
@@ -64,9 +68,11 @@
     border-radius: 2px;
   }
   @media (prefers-reduced-motion: no-preference) {
-    .masthead, .total--lead, main > section { animation: rise 0.5s ease-out backwards; }
-    .masthead { animation-delay: 0s; }
-    .total--lead { animation-delay: 0.05s; }
+    .identity-card, .info-card, .total--lead, main > section { animation: rise 0.5s ease-out backwards; }
+    .identity-card { animation-delay: 0s; }
+    .info-card:nth-of-type(1) { animation-delay: 0.05s; }
+    .info-card:nth-of-type(2) { animation-delay: 0.1s; }
+    .total--lead { animation-delay: 0.15s; }
     main > section:nth-of-type(1) { animation-delay: 0.1s; }
     main > section:nth-of-type(2) { animation-delay: 0.1s; }
     main > section:nth-of-type(3) { animation-delay: 0.15s; }
@@ -93,54 +99,94 @@
 
   .page { max-width: 760px; margin: 0 auto; padding: 0 24px 96px; }
 
-  /* ---------- Masthead ---------- */
-  .masthead {
+  /* ---------- Identity card ---------- */
+  .identity-card {
+    margin: 40px 0 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .identity-card__banner {
+    height: 96px;
     position: relative;
-    padding: 56px 0 40px;
+    background: linear-gradient(120deg, var(--accent) 0%, var(--banner-b) 100%);
     overflow: hidden;
   }
-  .masthead::before {
+  .identity-card__banner::before {
     content: "";
     position: absolute;
-    inset: 0 -24px auto -24px;
-    height: 100%;
+    inset: 0;
     background-image:
-      radial-gradient(circle at 12% 30%, color-mix(in srgb, var(--accent) 30%, transparent) 0 2px, transparent 2px),
-      radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--accent) 30%, transparent) 0 2px, transparent 2px),
-      radial-gradient(circle at 94% 62%, color-mix(in srgb, var(--mark) 35%, transparent) 0 2px, transparent 2px),
-      radial-gradient(circle at 60% 78%, color-mix(in srgb, var(--accent) 25%, transparent) 0 1.6px, transparent 1.6px),
-      radial-gradient(circle at 35% 8%, color-mix(in srgb, var(--accent) 25%, transparent) 0 1.6px, transparent 1.6px);
+      radial-gradient(circle at 14% 35%, rgba(255,255,255,0.55) 0 2px, transparent 2px),
+      radial-gradient(circle at 84% 20%, rgba(255,255,255,0.45) 0 2px, transparent 2px),
+      radial-gradient(circle at 95% 70%, rgba(255,255,255,0.4) 0 1.8px, transparent 1.8px),
+      radial-gradient(circle at 62% 80%, rgba(255,255,255,0.35) 0 1.6px, transparent 1.6px),
+      radial-gradient(circle at 38% 10%, rgba(255,255,255,0.35) 0 1.6px, transparent 1.6px),
+      radial-gradient(circle at 25% 85%, rgba(255,255,255,0.3) 0 1.6px, transparent 1.6px);
     background-repeat: no-repeat;
-    opacity: 0.7;
-    pointer-events: none;
+    opacity: 0.8;
   }
-  .masthead__rule {
-    height: 3px;
-    background: var(--accent);
-    width: 64px;
-    margin-bottom: 22px;
+  .identity-card__body {
+    position: relative;
+    padding: 52px 26px 26px;
   }
-  .masthead h1 {
+  .avatar-wrap {
+    position: absolute;
+    top: -46px;
+    left: 26px;
+  }
+  .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 4px solid var(--surface);
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Fraunces", Georgia, serif;
     font-weight: 600;
-    font-size: clamp(2rem, 1.7rem + 1.4vw, 2.7rem);
+    font-size: 1.7rem;
+    color: var(--accent);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .avatar-badge {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--linkedin);
+    color: #fff;
+    border: 3px solid var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.01em;
+  }
+  .identity-card h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.7rem, 1.5rem + 1vw, 2.2rem);
     letter-spacing: -0.01em;
     text-wrap: balance;
-    margin: 0 0 8px;
-    position: relative;
+    margin: 0 0 6px;
   }
-  .masthead .role {
+  .identity-card .role {
     color: var(--muted);
-    font-size: 1.02rem;
-    margin: 0 0 22px;
-    position: relative;
+    font-size: 1rem;
+    margin: 0 0 18px;
   }
-  .masthead__meta {
+  .identity-card__meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 14px 22px;
-    position: relative;
   }
   .tag {
     display: inline-flex;
@@ -156,20 +202,41 @@
     text-transform: uppercase;
     border-radius: 3px;
   }
-  .masthead__meta .datestamp {
+  .identity-card__meta .datestamp {
     color: var(--muted);
     font-size: 0.82rem;
   }
 
-  /* ---------- Lead ---------- */
-  .lead {
-    font-size: 1.06rem;
-    max-width: 62ch;
-    color: var(--ink);
-    border-top: 1px solid var(--line);
-    padding-top: 28px;
-    margin: 0 0 8px;
+  /* ---------- Info cards (About / DZone stats) ---------- */
+  .info-card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    padding: 22px 24px;
+    margin-bottom: 16px;
   }
+  .info-card h3 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+  .info-card p {
+    margin: 0;
+    max-width: 64ch;
+  }
+  .stat-rows .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 11px 0;
+    border-top: 1px solid var(--line);
+  }
+  .stat-rows .row:first-child { border-top: none; padding-top: 2px; }
+  .stat-rows .row .k { color: var(--muted); font-size: 0.92rem; }
+  .stat-rows .row .v { font-weight: 500; }
 
   /* ---------- Stat ledger ---------- */
   .ledger {
@@ -336,15 +403,40 @@
 <body>
 <div class="page">
 
-  <header class="masthead">
-    <div class="masthead__rule"></div>
-    <h1>Balaji Venkatasubramaniyar</h1>
-    <p class="role">Technical Lead, Enterprise Insurance Platform Integrations</p>
-    <div class="masthead__meta">
-      <span class="tag">Microsoft MVP Candidate — Trailing 12 Months</span>
-      <span class="datestamp mono">Prepared September 2026</span>
+  <header class="identity-card">
+    <div class="identity-card__banner"></div>
+    <div class="identity-card__body">
+      <div class="avatar-wrap">
+        <!-- Placeholder monogram — swap for a real headshot: <img class="avatar" src="avatar.jpg" alt="Balaji Venkatasubramaniyar"> -->
+        <div class="avatar" role="img" aria-label="Balaji Venkatasubramaniyar">BV</div>
+        <span class="avatar-badge" aria-hidden="true">in</span>
+      </div>
+      <h1>Balaji Venkatasubramaniyar</h1>
+      <p class="role">Technical Lead, Enterprise Insurance Platform Integrations</p>
+      <div class="identity-card__meta">
+        <span class="tag">Microsoft MVP Candidate — Trailing 12 Months</span>
+        <span class="datestamp mono">Prepared September 2026</span>
+      </div>
     </div>
   </header>
+
+  <div class="info-card">
+    <h3>About</h3>
+    <p>Technical Lead and AI engineer with 13+ years in insurance technology. Builds scalable systems using
+    React, .NET, Progress 4GL, and modern AI/LLM architectures — leading teams, delivering enterprise platforms,
+    and shipping solutions adopted across multiple carriers, including no-code onboarding frameworks and
+    high-performance REST services. Currently focused on AI-agent systems and MCP-based automation.</p>
+  </div>
+
+  <div class="info-card">
+    <h3>DZone Community Profile</h3>
+    <div class="stat-rows">
+      <div class="row"><span class="k">Reputation</span><span class="v mono">477</span></div>
+      <div class="row"><span class="k">Pageviews</span><span class="v mono">12.5K</span></div>
+      <div class="row"><span class="k">Articles</span><span class="v mono">7</span></div>
+      <div class="row"><span class="k">Comments</span><span class="v mono">0</span></div>
+    </div>
+  </div>
 
   <section class="total total--lead">
     <div class="total__num mono">32+</div>
@@ -353,10 +445,6 @@
       <p>Pieces of evidence over the trailing 12 months — 9 speaking sessions, 8 published articles, 3 IEEE Region 3 videos, and 12+ LinkedIn posts.</p>
     </div>
   </section>
-
-  <p class="lead">A record of speaking, publishing, and community contribution in applied AI — building
-  retrieval-augmented generation pipelines and agentic systems on Azure OpenAI, Azure Cosmos DB, and Chroma DB,
-  and sharing that work with the Microsoft developer community through talks, articles, and video.</p>
 
   <div class="ledger">
     <div class="ledger__cell"><div class="ledger__num mono">9</div><div class="ledger__label">Speaking<br>Sessions</div></div>
@@ -434,15 +522,36 @@
       </div>
 
       <div class="subgroup">
-        <div class="subgroup__label">DZone · 7</div>
+        <div class="subgroup__label">DZone · 7 articles · 12.5K views</div>
         <ul class="record">
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/building-agentic-rag" target="_blank" rel="noopener">Building Agentic RAG <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/bedrock-vs-vertex-vs-foundry" target="_blank" rel="noopener">Bedrock vs Vertex vs Foundry <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/vector-database-indexing-explained" target="_blank" rel="noopener">Vector Database Indexing Explained <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/agentic-rag-mcp" target="_blank" rel="noopener">Agentic RAG + MCP <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/rag-agent-azure-ai-foundry" target="_blank" rel="noopener">RAG Agent on Azure AI Foundry <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/config-driven-soap-rest-integration" target="_blank" rel="noopener">Building a Config-Driven SOAP/REST Integration Layer: One Service, Many Protocols <span class="arrow">↗</span></a></span></div></li>
-          <li><div class="body"><span class="title"><a href="https://dzone.com/articles/ai-orchestration-types" target="_blank" rel="noopener">AI Orchestration Types <span class="arrow">↗</span></a></span></div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/building-agentic-rag" target="_blank" rel="noopener">Building Agentic RAG, Step by Step: From Static Retrieval to Reasoning Pipelines <span class="arrow">↗</span></a></span>
+            <span class="venue">Sep 4, 2026 · <span class="mono">241</span> views</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/bedrock-vs-vertex-vs-foundry" target="_blank" rel="noopener">AWS Bedrock vs Vertex AI vs Azure Foundry: Stop Comparing Benchmarks, Start Asking This Instead <span class="arrow">↗</span></a></span>
+            <span class="venue">Aug 20, 2026 · <span class="mono">1,750</span> views · <span class="mono">1</span> like</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/vector-database-indexing-explained" target="_blank" rel="noopener">Vector Database Indexing Explained: Why It Matters More Than the Embeddings Themselves <span class="arrow">↗</span></a></span>
+            <span class="venue">Aug 18, 2026 · <span class="mono">1,327</span> views · <span class="mono">1</span> like</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/agentic-rag-mcp" target="_blank" rel="noopener">Agentic RAG: Basic RAG Plus MCP Tool Calls <span class="arrow">↗</span></a></span>
+            <span class="venue">Aug 4, 2026 · <span class="mono">2,252</span> views</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/rag-agent-azure-ai-foundry" target="_blank" rel="noopener">I Built a RAG Agent on Azure AI Foundry in an Afternoon. Here's What Nobody Tells You. <span class="arrow">↗</span></a></span>
+            <span class="venue">Jul 30, 2026 · <span class="mono">1,971</span> views · <span class="mono">1</span> like</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/config-driven-soap-rest-integration" target="_blank" rel="noopener">Building a Config-Driven SOAP/REST Integration Layer: One Service, Many Protocols <span class="arrow">↗</span></a></span>
+            <span class="venue">Jul 30, 2026 · <span class="mono">2,364</span> views</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://dzone.com/articles/ai-orchestration-types" target="_blank" rel="noopener">6 Types of AI Orchestration Every Tech Leader Needs to Know <span class="arrow">↗</span></a></span>
+            <span class="venue">Jul 9, 2026 · <span class="mono">2,620</span> views · <span class="mono">2</span> likes</span>
+          </div></li>
         </ul>
       </div>
 
