@@ -244,6 +244,13 @@
 
   /* ---------- Evidence sections ---------- */
   main > section { margin-bottom: 52px; }
+  main > section.minor {
+    opacity: 0.9;
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+  }
+  .minor .section__head h2 { font-weight: 500; color: var(--muted); }
+  .minor .record .title { font-weight: 400; }
   .section__head {
     display: flex;
     align-items: baseline;
@@ -429,40 +436,42 @@
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Memphis, TN</span>
             <span class="title"><a href="https://memphisagentcamp.github.io/" target="_blank" rel="noopener">AgentCamp Memphis 2026 <span class="arrow">↗</span></a></span>
+            <span class="venue">Mar 16, 2026</span>
           </div>
         </li>
         <li>
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Chattanooga, TN</span>
             <span class="title"><a href="http://sceniccitysummit.com/speakers/" target="_blank" rel="noopener">Scenic City Summit 2026 <span class="arrow">↗</span></a></span>
-            <span class="venue">"Supercharging AI with Vector Databases"</span>
+            <span class="venue">"Supercharging AI with Vector Databases" · Jun 5, 2026</span>
           </div>
         </li>
         <li>
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Memphis, TN</span>
             <span class="title"><a href="https://www.meetup.com/memphis-technology-user-groups/events/315215097/" target="_blank" rel="noopener">Memphis Technology User Groups Meetup — Memphis-Nashville Python User Group <span class="arrow">↗</span></a></span>
-            <span class="venue">"Building Your First RAG Pipeline in Python with Azure OpenAI, Azure Cosmos DB, and Chroma DB" — <a href="https://www.linkedin.com/posts/douglasastarnes_python-pytn2026-activity-7484993031444525056-4059" target="_blank" rel="noopener">recap ↗</a></span>
+            <span class="venue">"Building Your First RAG Pipeline in Python with Azure OpenAI, Azure Cosmos DB, and Chroma DB" · Jul 20, 2026 — <a href="https://www.linkedin.com/posts/douglasastarnes_python-pytn2026-activity-7484993031444525056-4059" target="_blank" rel="noopener">recap ↗</a></span>
           </div>
         </li>
         <li>
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Memphis, TN</span>
             <span class="title"><a href="https://www.meetup.com/memphis-net-and-azure-developers-group/events/315388907/" target="_blank" rel="noopener">Microsoft Office, Memphis <span class="arrow">↗</span></a></span>
-            <span class="venue">"Developing AI Agent Pipelines in Python with Azure AI Foundry, OpenAI, and ChromaDB"</span>
+            <span class="venue">"Developing AI Agent Pipelines in Python with Azure AI Foundry, OpenAI, and ChromaDB" · Jul 23, 2026</span>
           </div>
         </li>
         <li>
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Virtual — Global</span>
             <span class="title"><a href="https://lnkd.in/p/gnq4mVzQ" target="_blank" rel="noopener">Copilotverse <span class="arrow">↗</span></a></span>
+            <span class="venue">"Build Your First RAG Pipeline with Azure OpenAI" · Aug 14, 2026</span>
           </div>
         </li>
         <li>
           <div class="body">
             <span class="loc"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/></svg>Nashua, NH · Virtual</span>
             <span class="title"><a href="https://www.meetup.com/nashuaug/events/315868749/" target="_blank" rel="noopener">Nashua CLOUD .NET User Group (online) <span class="arrow">↗</span></a></span>
-            <span class="venue">"Build Your First Python RAG Pipeline with Azure OpenAI, Cosmos DB &amp; Chroma"</span>
+            <span class="venue">"Build Your First Python RAG Pipeline with Azure OpenAI, Cosmos DB &amp; Chroma" · Aug 18, 2026</span>
           </div>
         </li>
         <li>
@@ -631,6 +640,59 @@
           <li><div class="body">
             <span class="title"><a href="https://www.linkedin.com/posts/balaji-venkatasubramaniyar_artificialintelligence-machinelearning-llm-share-7406068015475163136-E46Q" target="_blank" rel="noopener">Ever wonder what’s really happening when you chat with ChatGPT or Claude? A builder’s guide to how LLMs work <span class="arrow">↗</span></a></span>
             <span class="venue">Dec 14, 2025 · <span class="mono">442</span> impressions · <span class="mono">6</span> reactions · <span class="mono">2</span> comments · <span class="mono">0</span> reposts</span>
+          </div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="minor">
+      <div class="section__head">
+        <h2>Other Channels</h2>
+        <div class="fill"></div>
+        <span class="count mono">8</span>
+      </div>
+      <p class="section__note">Smaller contributions — most are cross-posts of the DZone / O'Reilly articles above. Listed for completeness and <em>not</em> included in the headline total or the ledger.</p>
+
+      <div class="subgroup">
+        <div class="subgroup__label">Substack · balajivenkatasubramaniyar.substack.com · 4 posts · 11 views</div>
+        <ul class="record">
+          <li><div class="body">
+            <span class="title"><a href="https://balajivenkatasubramaniyar.substack.com/p/i-built-a-rag-agent-on-azure-ai-foundry" target="_blank" rel="noopener">I Built a RAG Agent on Azure AI Foundry in an Afternoon. Here's What Nobody Tells You. <span class="arrow">↗</span></a></span>
+            <span class="venue">Jul 12, 2026 · <span class="mono">1</span> view</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://balajivenkatasubramaniyar.substack.com/p/the-quiet-infrastructure-shift-thats" target="_blank" rel="noopener">The quiet infrastructure shift that's already happened (you just missed it) <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 14, 2026 · <span class="mono">2</span> views</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://balajivenkatasubramaniyar.substack.com/p/most-people-think-vector-databases" target="_blank" rel="noopener">Most people think vector databases are about embeddings. <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 13, 2026 · <span class="mono">4</span> views</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://balajivenkatasubramaniyar.substack.com/p/6-types-of-ai-orchestration-every" target="_blank" rel="noopener">6 Types of AI Orchestration Every Tech Leader Needs to Know <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 12, 2026 · <span class="mono">4</span> views</span>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="subgroup">
+        <div class="subgroup__label">Medium · @balaji.v0310 · 4 AI stories</div>
+        <ul class="record">
+          <li><div class="body">
+            <span class="title"><a href="https://medium.com/@balaji.v0310/i-rebuilt-my-rag-pipeline-on-microsoft-foundry-heres-what-changed-6b982bccb50d" target="_blank" rel="noopener">I Rebuilt My RAG Pipeline on Microsoft Foundry. Here's What Changed. <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 21, 2026 · 3 min read</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://medium.com/@balaji.v0310/your-favorite-dev-tools-have-been-running-vector-databases-this-whole-time-11d50ec2fb7b" target="_blank" rel="noopener">Your Favorite Dev Tools Have Been Running Vector Databases This Whole Time <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 14, 2026 · 3 min read</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://medium.com/@balaji.v0310/most-people-think-vector-databases-are-about-embeddings-50783817c8e2" target="_blank" rel="noopener">Most people think vector databases are about embeddings. <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 13, 2026 · 2 min read</span>
+          </div></li>
+          <li><div class="body">
+            <span class="title"><a href="https://medium.com/@balaji.v0310/6-types-of-ai-orchestration-every-tech-leader-needs-to-know-3d0aade9ce49" target="_blank" rel="noopener">6 Types of AI Orchestration Every Tech Leader Needs to Know <span class="arrow">↗</span></a></span>
+            <span class="venue">Jun 12, 2026 · 4 min read · <span class="mono">5</span> claps</span>
           </div></li>
         </ul>
       </div>
