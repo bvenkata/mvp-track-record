@@ -374,6 +374,9 @@
   }
   .total__body p { margin: 0; color: var(--ink); max-width: 46ch; }
   .total__body .kicker { display: block; margin-bottom: 6px; }
+  .total__pair { display: flex; align-items: baseline; gap: 10px; }
+  .total__pair .kicker { line-height: 1.25; }
+  .total__num--minor { font-size: 1.7rem; color: var(--muted); }
 
   footer {
     margin-top: 56px;
@@ -408,10 +411,16 @@
   </header>
 
   <section class="total total--lead">
-    <div class="total__num mono">33+</div>
+    <div class="total__pair">
+      <div class="total__num mono">33+</div>
+      <span class="kicker">Major<br>contributions</span>
+    </div>
+    <div class="total__pair">
+      <div class="total__num total__num--minor mono">8</div>
+      <span class="kicker">Smaller<br>contributions</span>
+    </div>
     <div class="total__body">
-      <span class="kicker">Major Contributions</span>
-      <p>Over the trailing 12 months — 10 speaking sessions, 8 published articles, 3 IEEE Region 3 videos, and 12+ LinkedIn posts — reaching <strong>25,000+ views and impressions</strong> across article reads, video views, and post impressions. A further <strong>8 smaller contributions</strong> (Substack and Medium cross-posts) are listed separately and not counted in this figure.</p>
+      <p>Trailing 12 months, <strong>25,000+ views and impressions</strong>. Major: 10 speaking sessions, 8 published articles, 3 IEEE Region 3 videos, 12+ LinkedIn posts. Smaller: 4 Substack posts, 4 Medium stories (cross-posts).</p>
     </div>
   </section>
 
